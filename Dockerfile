@@ -1,6 +1,4 @@
-FROM library/debian:jessie
+FROM php:7.4-cli
 MAINTAINER vivek
-RUN apt-get update && apt-get -y --no-install-recommends install file curl unzip libapache2-mod-php5 php5-mysql php5-gd php5-curl && rm -rf /var/cache/apt /var/lib/apt /var/lib/dpkg && a2enmod rewrite headers && sed -i -e 's:${APACHE_LOG_DIR}/access.log:/dev/stdout:' -e 's:${APACHE_LOG_DIR}/error.log:/dev/stderr:' /etc/apache2/sites-available/*
-COPY bootstrap.sh /
+RUN https://github.axa.com/axa-asia-ssc/Hapco-Spine 
 EXPOSE 80
-ENTRYPOINT [ "/bootstrap.sh" ]
